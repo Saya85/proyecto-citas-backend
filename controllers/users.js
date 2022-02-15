@@ -1,5 +1,5 @@
-const User = require('../models/user');
 
+const User = require('../models/user');
 const {v4: uiid} = require('uuid');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -17,9 +17,9 @@ usersControllers.mostrarUsers = async (req, res, next)=>{
 //
 
 usersControllers.registrar = async (req, res, next) =>{  
-    const {nombre, apellido, email, password} = req.body;
+    const {nombre, apellidos, email, password} = req.body;
     const cryptPass = bcrypt.hashSync(password,8);
-    const response = await User.create({uiid: uuidv4(), nombre: nombre, apellido: apellido, email: email, password: cryptPass });
+    const response = await User.create({uiid: uuidv4(), nombre: nombre, apellidos: apellidos, email: email, password: cryptPass });
     const newUser = response.datavalues;
     res.status(201).json(newUser);
 };
@@ -71,7 +71,7 @@ usersControllers.logaut =   async (req, res, next) => {
     } catch (error) {
       res.status(400).send(error);
     }
-}
+};
 
 
 
