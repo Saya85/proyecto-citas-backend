@@ -32,9 +32,7 @@ module.exports = {
         }
       },
       fecha: {
-        type: 'TIMESTAMP',
-        defaultValue: Sequelize.NOW,
-        allowNull: false
+        type: Sequelize.DATE
       },
       createdAt: {
         allowNull: false,

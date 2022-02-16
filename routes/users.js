@@ -2,23 +2,23 @@ var express = require('express');
 var router = express.Router();
 
 /* GET users listing. */
-const usersControllers = require('../controllers/users');
+const usersController = require('../controllers/users');
 
 const auth = require('../middlewares/auth'); 
 
-router.get('/', auth, usersControllers.mostrarUsers);
+router.get('/', auth, usersController.mostrarUsers);
 
-// REGISTRAR USER
-router.post('/registrar', usersControllers.registrar);
+// 
+router.post('/registrar', usersController.registrar);
 
-// ELIMINAR USER
-router.delete('/', auth, usersControllers.borrar);
+// 
+router.delete('/', auth, usersController.borrar);
 
 
-// LOGIN USER
-router.post('/login', usersControllers.login);
+// 
+router.post('/login', usersController.login);
 
-// LOGOUT USER
-router.get('/logout', auth, usersControllers.logaut);
+// 
+router.get('/logout', auth, usersController.logaut);
 
 module.exports = router;

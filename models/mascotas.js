@@ -11,7 +11,7 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Mascota.hasOne(models.User, {
+      Mascotas.hasOne(models.User, {
         foreignKey: 'uuid',
         as: 'users',
         onDelete: 'cascade'

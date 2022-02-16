@@ -1,7 +1,8 @@
 var express = require('express');
 const { v4: uuidv4 } = require('uuid');
 
-const Veterinario = require('../models/veterinarios');
+const Veterinario = require('../models').Veterinarios;
+
 const veterinarioControllers = [];
 
 // 
@@ -14,8 +15,8 @@ veterinarioControllers.veterinariosAll = async (req, res, next) => {
 // 
 veterinarioControllers.register = async (req, res, next) => {
   try {
-    const { nombre, apellidos } = req.body;
-    const newVeterinario = await Veterinario.create({ uuid: uuidv4(), nombre: nombre, apellidos: apellidos});
+    const { name, apellidos } = req.body;
+    const newVeterinario = await Veterinario.create({ uuid: uuidv4(), name: name, apellidos: apellidos});
     res.status(200).json(newVeterinario);
   } catch (error) {
     res.status(500).json(error);

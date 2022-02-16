@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
         as: 'mascotas',
         onDelete: 'set null'
       })
-      Citas.hasOne(models.Veterinario, {
+      Citas.hasOne(models.Veterinarios, {
         foreignKey: 'uuid',
         as: 'veterinario',
         onDelete: 'set null'
@@ -36,7 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     uuidUser: DataTypes.UUID,
     uuidMascota: DataTypes.UUID,
     uuidVeterinario: DataTypes.UUID,
-    fecha: DataTypes.TIMESTAMP
+    fecha: DataTypes.DATE
     }, {
     sequelize,
     modelName: 'Citas',
