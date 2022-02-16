@@ -40,4 +40,4 @@ mascotasControllers.mascotasUsuario = async (req, res, next) => {
     }
 };
 
-model.exports= mascotasControllers;
+modele.exports= mascotasControllers;
