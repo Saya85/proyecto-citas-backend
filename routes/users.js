@@ -4,7 +4,7 @@ var router = express.Router();
 /* GET users listing. */
 const usersControllers = require('../controllers/users');
 
-const auth = require('../middleware/auth'); 
+const auth = require('../middlewares/auth'); 
 
 router.get('/', auth, usersControllers.mostrarUsers);
 
@@ -14,8 +14,6 @@ router.post('/registrar', usersControllers.registrar);
 // ELIMINAR USER
 router.delete('/', auth, usersControllers.borrar);
 
-// MODIFICAR USER
-// router.put('/', );
 
 // LOGIN USER
 router.post('/login', usersControllers.login);

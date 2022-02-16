@@ -5,7 +5,7 @@ const { v4: uuidv4 } = require('uuid');
 
 const mascotasControllers = require('../controllers/mascotas');
 
-const auth = require('../middleware/auth'); 
+const auth = require('../middlewares/auth'); 
 
 // 
 

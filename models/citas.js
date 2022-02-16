@@ -36,8 +36,7 @@ module.exports = (sequelize, DataTypes) => {
     uuidUser: DataTypes.UUID,
     uuidMascota: DataTypes.UUID,
     uuidVeterinario: DataTypes.UUID,
-    inital_date: DataTypes.DATE,
-    final_date: DataTypes.DATE
+    fecha: DataTypes.TIMESTAMP
     }, {
     sequelize,
     modelName: 'Citas',

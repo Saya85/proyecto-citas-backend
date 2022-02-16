@@ -1,16 +1,16 @@
 {
   "development": {
-    "username": "root",
-    "password": 123456,
-    "database": "veterinaria_db",
-    "host": "127.0.0.1",
+    "username": "ba0a0a9c328947",
+    "password": "134ad701",
+    "database": "heroku_1e677967ee74b06",
+    "host": "eu-cdbr-west-02.cleardb.net",
     "dialect": "mysql"
   },
   "test": {
     "username": "root",
     "password": null,
     "database": "database_test",
-    "host": "127.0.0.1",
+    "host": "",
     "dialect": "mysql"
   },
   "production": {

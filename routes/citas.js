@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 const citasControllers = require('../controllers/citas');
-const auth = require('../middleware/auth'); 
+const auth = require('../middlewares/auth'); 
 
 // 
 

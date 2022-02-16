@@ -1,6 +1,6 @@
 
 const User = require('../models/user');
-const {v4: uiid} = require('uuid');
+const {v4: uuidv4} = require('uuid');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const Token = require('../models/tokens');

@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey:true
     },
     email: {
-    tipe: DataTypes.STRING,
+    type: DataTypes.STRING,
         unique: true
     },
     nombre: DataTypes.STRING,
