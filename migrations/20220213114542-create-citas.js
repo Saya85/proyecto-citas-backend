@@ -17,6 +17,9 @@ module.exports = {
       id_user: {
         type: Sequelize.INTEGER
       },
+      fecha: {
+        type: Sequelize.DATETIME
+      },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

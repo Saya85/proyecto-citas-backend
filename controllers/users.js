@@ -52,9 +52,9 @@ usersControllers.login = async(req, res, next)=>{
         }
         const token = jwt.sign({uuid: usuario.uuid, nombre: usuario.nombre, email: usuario.email}, process.env.JWT_SECRET)
         const response = await Token.create({ uuid: uuidv4(), token: token, uuidUser: usuario.uuid, device: null});
-        res.status(200).json('usuario login')
+        res.status(200).json('usuario login');
     } catch (error) {
-        res.status(400).send(error)
+        res.status(400).send(error);
     }
 };
 
