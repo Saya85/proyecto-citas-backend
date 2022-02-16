@@ -73,7 +73,4 @@ usersControllers.logaut =   async (req, res, next) => {
     }
 };
 
-
-
-
 module.exports = usersControllers;
