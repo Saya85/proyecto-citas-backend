@@ -2,20 +2,34 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Citas', {
-      id: {
+      uuid: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID
       },
-      veterinarios: {
-        type: Sequelize.INTEGER
+      uuidUser: {
+        type: Sequelize.UUID,
+        onDelete: 'set null',
+        references: { 
+          model: 'users',
+          key: 'uuid'
+        }
       },
-      id_mascotas: {
-        type: Sequelize.INTEGER
+      uuidMascota: {
+        type: Sequelize.UUID,
+        onDelete: 'set null',
+        references: { 
+          model: 'mascotas',
+          key: 'uuid'
+        }
       },
-      id_user: {
-        type: Sequelize.INTEGER
+      uuidVeterinario: {
+        type: Sequelize.UUID,
+        onDelete: 'set null',
+        references: { 
+          model: 'veterinarios',
+          key: 'uuid'
+        }
       },
       fecha: {
         type: Sequelize.DATETIME

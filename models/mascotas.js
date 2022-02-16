@@ -11,11 +11,21 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Mascota.hasOne(models.User, {
+        foreignKey: 'uuid',
+        as: 'users',
+        onDelete: 'cascade'
+      });
     }
   }
   Mascotas.init({
+    uuid: {
+      type: DataTypes.UUID,
+      primaryKey: true
+    },
     name: DataTypes.STRING,
-    tipo_mascota: DataTypes.STRING
+    tipo: DataTypes.STRING,
+    uuidUser: DataTypes.UUID 
   }, {
     sequelize,
     modelName: 'Mascotas',

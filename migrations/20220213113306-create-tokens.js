@@ -2,15 +2,25 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Tokens', {
-      id: {
+      uuid: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID
       },
       token: {
         type: Sequelize.STRING
       },
+      uuidUser: {
+        type: Sequelize.UUID,
+        onDelete: 'cascade',
+        references: { 
+          model: 'user',
+          key: 'uuid'
+          }
+        },
+        device: {
+          type: Sequelize.STRING
+        },
       createdAt: {
         allowNull: false,
         type: Sequelize.DATE

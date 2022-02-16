@@ -2,17 +2,24 @@
 module.exports = {
   async up(queryInterface, Sequelize) {
     await queryInterface.createTable('Mascotas', {
-      id: {
+      uuid: {
         allowNull: false,
-        autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.UUID
       },
       name: {
         type: Sequelize.STRING
       },
-      tipo_mascota: {
+      tipo: {
         type: Sequelize.STRING
+      },
+      uuidUser: {
+        type: Sequelize.UUID,
+        onDelete: 'cascade',
+        references: { 
+          model: 'user',
+          key: 'uuid'
+        }
       },
       createdAt: {
         allowNull: false,
