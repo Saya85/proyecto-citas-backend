@@ -2,7 +2,7 @@ const { v4: uuidv4 } = require('uuid');
 const { Op } = require("sequelize");
 
 
-const Cita = require('../models/citas');
+const Cita = require('../models/').Citas;
 
 const citasControllers = [];
 
@@ -69,13 +69,13 @@ citasControllers.modificarCita = async (req, res, next) => {
                 where: {
                     [Op.and]: [
                         { uuidUser: req.user[0].uuid },
-                        { uuid: uuidCita }
+                        { uuid: cita }
                     ]
                 }
         });
 
         if(newCita[0] === 1) {
-            res.status(200).json(newCita);
+            res.status(200).json({message: 'hora de cita cambiada'});
         }
     } catch (error) {
         res.status(400).send(error);
