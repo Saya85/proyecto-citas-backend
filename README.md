@@ -9,13 +9,9 @@ simulacion de una web de citas de veterinaria
 ## Tecnologias y recursos
 ***
 Tecnologias utilizadas 
-<<<<<<< HEAD
-* [MongoDB](https://heroku.com/)(Base de Datos)
+
+* [heroku](https://heroku.com/)(Base de Datos)
 * [Postman](https://www.postman.com/downloads/) 
-=======
-* [base de datos](HEROKU.com)
-* [Postman](https://www.postman.com/downloads/) 
->>>>>>> release/0.1.1
 * [Java-Script](Json)
 * [express](~4.16.1)
 * [bcrypt](^5.0.1) 
@@ -29,11 +25,6 @@ Tecnologias utilizadas
 * [sequelize-cli](^6.4.1)
 * [uudi](^8.3.2)
 * [mysql2](^2.3.3)
-
-<<<<<<< HEAD
-=======
-
->>>>>>> release/0.1.1
 
 &nbsp;
 
