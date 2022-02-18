@@ -19,6 +19,6 @@ router.delete('/', auth, usersController.borrar);
 router.post('/login', usersController.login);
 
 // 
-router.get('/logout', auth, usersController.logaut);
+router.get('/logout', auth, usersController.logout);
 
 module.exports = router;

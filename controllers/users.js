@@ -1,5 +1,5 @@
 
-const User = require('../models').Users;
+const User = require('../models').User;
 const {v4: uuidv4} = require('uuid');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
@@ -42,7 +42,7 @@ usersControllers.borrar = async (req, res, next)=>{
 usersControllers.login = async(req, res, next)=>{
     try {
         const { email, password } = req.body
-        const usuario = await User.findOne({ email: email});
+        const usuario = await User.findOne({where:{email: email}});
         if (!usuario) { 
             return res.status(401).json({message: 'email incorrecto'});
         }
@@ -52,13 +52,13 @@ usersControllers.login = async(req, res, next)=>{
         }
         const token = jwt.sign({uuid: usuario.uuid, nombre: usuario.nombre, email: usuario.email}, process.env.JWT_SECRET)
         const response = await Token.create({ uuid: uuidv4(), token: token, uuidUser: usuario.uuid, device: null});
-        res.status(200).json('usuario login');
+        res.status(200).json(response.dataValues.token);
     } catch (error) {
         res.status(400).send(error);
     }
 };
 
-usersControllers.logaut =   async (req, res, next) => { 
+usersControllers.logout =   async (req, res, next) => { 
     try {
       const tokenBorrado = await Token.destroy({
         where: {
@@ -66,7 +66,9 @@ usersControllers.logaut =   async (req, res, next) => {
         }
       });
      if(tokenBorrado === 1) {
-       res.status(200).json('deslogueado correctamente.') 
+       res.status(200).json('deslogueado correctamente.')   
+     }else {
+         res.status(300).json('ya estabas deslogueado')
      }
     } catch (error) {
       res.status(400).send(error);
