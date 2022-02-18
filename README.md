@@ -10,9 +10,8 @@ simulacion de una web de citas de veterinaria
 ***
 Tecnologias utilizadas 
 <<<<<<< HEAD
-* [MongoDB](https://cloud.mongodb.com/)(Base de Datos)
+* [MongoDB](https://heroku.com/)(Base de Datos)
 * [Postman](https://www.postman.com/downloads/) 
-* [api](https://api.themoviedb.org/3/movie/popular?api_key=cea68b520beecac6718820e4ac576c3a)
 =======
 * [base de datos](HEROKU.com)
 * [Postman](https://www.postman.com/downloads/) 
@@ -32,7 +31,6 @@ Tecnologias utilizadas
 * [mysql2](^2.3.3)
 
 <<<<<<< HEAD
-* [base de datos](HEROKU.com)
 =======
 
 >>>>>>> release/0.1.1
