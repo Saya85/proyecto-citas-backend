@@ -27,10 +27,11 @@ usersControllers.registrar = async (req, res, next) =>{
 //
 
 usersControllers.borrar = async (req, res, next)=>{
-    const{uuidUser} =req.body;
+   // const{uuidUser} =req.user.uuid;
+   console.log(req)
     const borrado = await User.destroy({
         where:{
-            uuid: uuidUser
+            uuid: req.user.uuid
         }
     });
     if (borrado === 1){
@@ -52,7 +53,7 @@ usersControllers.login = async(req, res, next)=>{
         }
         const token = jwt.sign({uuid: usuario.uuid, nombre: usuario.nombre, email: usuario.email}, process.env.JWT_SECRET)
         const response = await Token.create({ uuid: uuidv4(), token: token, uuidUser: usuario.uuid, device: null});
-        res.status(200).json(response.dataValues.token);
+        res.status(200).json({id: response.dataValues.uuid, token: token});
     } catch (error) {
         res.status(400).send(error);
     }
